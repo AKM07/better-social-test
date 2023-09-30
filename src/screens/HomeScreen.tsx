@@ -5,10 +5,15 @@ import colors from '../../public/theme/colors';
 import {DATA} from '../models/DummyLoremIpsum';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {
+  ArrowDown,
+  ArrowUp,
   ArrowUpCircle,
+  ChevronDown,
+  ChevronUp,
   MessageSquare,
   Share,
   Share2,
+  Slash,
 } from 'react-native-feather';
 import FloatingButton from '../components/Button/FloatingButton';
 
@@ -46,7 +51,9 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
               </View>
             </View>
             <View style={{flex: 1}}>
-              <Text numberOfLines={5} style={{color: colors.black, fontSize: 14, padding: 1} }>
+              <Text
+                numberOfLines={5}
+                style={{color: colors.black, fontSize: 14, padding: 1}}>
                 {item.text}
               </Text>
             </View>
@@ -60,13 +67,20 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
               style={{
                 flexDirection: 'row',
                 height: 48,
-                marginTop:10,
+                marginTop: 10,
                 padding: 10,
-                alignContent: 'space-between'
+                alignContent:'space-between',
               }}>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{flexDirection: 'row', flex:1}}>
                 <Share2 stroke={colors.grey[400]} style={{marginEnd: 10}} />
                 <MessageSquare stroke={colors.grey[400]} />
+                <Text style={{marginLeft:5}}>{23}</Text>
+              </View>
+              <View style={{flexDirection: 'row', alignSelf: 'flex-end'}}>
+                <Slash stroke={colors.grey[400]} style={{marginEnd: 10}} />
+                <ChevronDown stroke={colors.grey[400]} />
+                <Text style={{marginHorizontal:5, color:colors.FAB}}>{23}</Text>
+                <ChevronUp stroke={colors.grey[400]} />
               </View>
             </View>
           </View>
@@ -74,7 +88,7 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
         numColumns={1}
         keyExtractor={item => item.id.toString()}
       />
-      <FloatingButton/>
+      <FloatingButton />
     </SafeAreaView>
   );
 };

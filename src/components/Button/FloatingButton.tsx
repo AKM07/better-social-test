@@ -1,14 +1,14 @@
 import {useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import colors from '../../../public/theme/colors';
-import { Edit, Edit2, Edit3 } from 'react-native-feather';
+import {Edit, Edit2, Edit3} from 'react-native-feather';
 
 const FloatingButton = () => {
   return (
     <TouchableOpacity
       style={{
         borderWidth: 1,
-        borderColor: colors.tahiti[500],
+        borderColor: colors.FAB[100],
         alignItems: 'center',
         justifyContent: 'center',
         width: 50,
@@ -20,7 +20,7 @@ const FloatingButton = () => {
         borderRadius: 100,
       }}
       onPress={() => {}}>
-      <Edit2 stroke={colors.white}/>
+      <Edit2 stroke={colors.white} />
     </TouchableOpacity>
   );
 };
